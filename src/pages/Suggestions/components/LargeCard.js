@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Body1 } from "../../../GlobalStyles";
+import { Body1, CUSTOM_STYLES } from "../../../GlobalStyles";
 import PrimaryButton from "../../../sharedComponents/PrimaryButton";
 
 function LargeCard({ img, heading, body, btn, link, btnColor }) {
@@ -26,6 +26,7 @@ const StyledWrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  border-radius: ${CUSTOM_STYLES.OTHER.borderRadius};
 `;
 
 const BodyWrapper = styled.div`

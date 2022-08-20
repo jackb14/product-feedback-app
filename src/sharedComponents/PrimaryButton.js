@@ -16,6 +16,7 @@ const StyledButton = styled.button`
   border-radius: ${CUSTOM_STYLES.OTHER.borderRadius};
   border: none;
   color: white;
+  font-weight: 600;
 
   &:hover {
     cursor: pointer;

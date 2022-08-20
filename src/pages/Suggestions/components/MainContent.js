@@ -48,7 +48,7 @@ function MainContent() {
             <Body1 style={{ color: "white" }}>Sort by:</Body1>
           </MarginWrapper>
         </Header>
-        {!suggestions ? suggestions : noFeedbackCard}
+        {suggestions ? suggestions : noFeedbackCard}
       </StyledWrapper>
     </>
   );

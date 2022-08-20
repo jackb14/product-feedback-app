@@ -9,10 +9,15 @@ export const GlobalStyles = createGlobalStyle`
   }
   html {
     font-size: 1.125rem;
+    max-width: 1110px;
+    margin: auto;
   }
   body {
     background-color: #E3E7FA;
     font-family: 'Jost', arial, sans-serif;
+  }
+  a {
+    text-decoration: none;
   }
   h1, h2, h3, h4 {
     font-weight: 700;

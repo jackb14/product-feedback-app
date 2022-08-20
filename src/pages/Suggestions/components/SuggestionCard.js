@@ -9,7 +9,12 @@ function SuggestionCard({ title, description, category, comments, upvotes }) {
     <>
       <StyledWrapper>
         <InnerWrapper>
-          <Upvote upvotes={upvotes} />
+          <Upvote
+            upvotes={upvotes}
+            direction="column"
+            width="40px"
+            height="55px"
+          />
           <div>
             <h3>{title}</h3>
             <Body1>{description}</Body1>

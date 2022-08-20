@@ -1,5 +1,6 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Body1, Body2, Body3, CUSTOM_STYLES } from "../../../GlobalStyles";
+import { Body1, Body2, CUSTOM_STYLES } from "../../../GlobalStyles";
 
 function Roadmap({ productRequests }) {
   // filter out suggestions and return statuses
@@ -48,7 +49,9 @@ function Roadmap({ productRequests }) {
     <>
       <FlexWrapper>
         <h2>Roadmap</h2>
-        <Body3>View</Body3>
+        <Link to="/roadmap">
+          <ViewLink>View</ViewLink>
+        </Link>
       </FlexWrapper>
       <Spacer />
       {statusOverview}
@@ -79,4 +82,12 @@ const StyledCircle = styled.div`
 
 const Spacer = styled.div`
   height: 10px;
+`;
+
+const ViewLink = styled.p`
+  font-size: 13px;
+  line-height: 19px;
+  font-weight: 600;
+  color: ${CUSTOM_STYLES.COLORS.royalBlue};
+  text-decoration: underline;
 `;
