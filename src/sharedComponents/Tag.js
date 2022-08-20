@@ -19,10 +19,11 @@ const StyledWrapper = styled.div`
   padding: 5px 16px;
   border-radius: ${CUSTOM_STYLES.OTHER.borderRadius};
   text-transform: capitalize;
+  color: ${CUSTOM_STYLES.COLORS.royalBlue} !important;
 
   &:hover {
     background-color: ${CUSTOM_STYLES.COLORS.royalBlue};
-    color: white;
+    color: white !important;
     cursor: pointer;
   }
 `;

@@ -8,6 +8,8 @@ function App() {
   const [data, setData] = useState(JSON_DATA);
   const value = { data, setData };
 
+  console.table(data);
+
   return (
     <>
       <DataContext.Provider value={value}>

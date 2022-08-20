@@ -47,4 +47,6 @@ const InnerWrapper = styled.div`
 
 const MarginWrapper = styled.div`
   margin-top: 12px;
+  display: flex;
+  justify-content: flex-start;
 `;

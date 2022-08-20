@@ -4,8 +4,18 @@ import Tags from "../../../sharedComponents/Tags";
 import FeatureCard from "./FeatureCard";
 import Roadmap from "./Roadmap";
 import bgImage from "../../../assets/suggestions/desktop/background-header.png";
+import { DataContext } from "../../../DataContext";
+import { useContext } from "react";
 
 function SideBar() {
+  const data = useContext(DataContext);
+  const { productRequests } = data.data;
+
+  // for tags component
+  const categoriesMap = productRequests.map((item) => item.category);
+  // Set removes duplicates and then converts to array
+  const categories = [...new Set([...categoriesMap])];
+
   return (
     <>
       <FlexWrapper>
@@ -16,10 +26,10 @@ function SideBar() {
           </StyledFeaturedCard>
         </FeatureCard>
         <FeatureCard>
-          <Tags />
+          <Tags categories={categories} />
         </FeatureCard>
         <FeatureCard>
-          <Roadmap />
+          <Roadmap productRequests={productRequests} />
         </FeatureCard>
       </FlexWrapper>
     </>

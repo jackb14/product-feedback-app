@@ -1,13 +1,18 @@
 import Tag from "./Tag";
 import styled from "styled-components";
 
-function Tags() {
+function Tags({ categories }) {
   // generate tags here based on input
+
+  const tagMap = categories.map((category, i) => (
+    <Tag key={i} category={category} />
+  ));
 
   return (
     <>
       <StyledWrapper>
-        <Tag category="test" />
+        <Tag category="All" />
+        {tagMap}
       </StyledWrapper>
     </>
   );

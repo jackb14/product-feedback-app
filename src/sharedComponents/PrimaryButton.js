@@ -1,10 +1,10 @@
 import { CUSTOM_STYLES } from "../GlobalStyles";
 import styled from "styled-components";
 
-function PrimaryButton({ children, link, variant }) {
+function PrimaryButton({ children, link, color }) {
   return (
     <>
-      <StyledButton>{children}</StyledButton>
+      <StyledButton style={{ backgroundColor: color }}>{children}</StyledButton>
     </>
   );
 }
@@ -12,7 +12,6 @@ function PrimaryButton({ children, link, variant }) {
 export default PrimaryButton;
 
 const StyledButton = styled.button`
-  background-color: red;
   padding: 12px 24px;
   border-radius: ${CUSTOM_STYLES.OTHER.borderRadius};
   border: none;
@@ -20,5 +19,6 @@ const StyledButton = styled.button`
 
   &:hover {
     cursor: pointer;
+    opacity: 90%;
   }
 `;

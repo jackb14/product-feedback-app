@@ -27,4 +27,4 @@ yarn-error.log*
 
 # Text copy to include in the app from the brief 
 README-brief.md
-/starter-code 
+/src/starter-code 

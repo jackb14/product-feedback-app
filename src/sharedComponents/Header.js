@@ -7,7 +7,9 @@ function Header({ children }) {
     <>
       <StyledHeader>
         <StyledWrapper>{children}</StyledWrapper>
-        <PrimaryButton>+ Add Feedback</PrimaryButton>
+        <PrimaryButton color={CUSTOM_STYLES.COLORS.purple}>
+          + Add Feedback
+        </PrimaryButton>
       </StyledHeader>
     </>
   );
@@ -29,6 +31,6 @@ const StyledWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 400px;
+  width: 350px;
   gap: 1rem;
 `;

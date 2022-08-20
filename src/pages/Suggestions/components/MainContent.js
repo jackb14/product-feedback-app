@@ -28,7 +28,7 @@ function MainContent() {
       <StyledWrapper>
         <Header>
           <img src={suggestionsIcon} alt="Suggestions icon" />
-          <h2>X Suggestions</h2>
+          <h2>{suggestions.length} Suggestions</h2>
           <MarginWrapper>
             <Body1>Sort by:</Body1>
           </MarginWrapper>
