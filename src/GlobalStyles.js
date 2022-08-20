@@ -14,8 +14,9 @@ export const GlobalStyles = createGlobalStyle`
     background-color: #E3E7FA;
     font-family: 'Jost', arial, sans-serif;
   }
-  h1 h2 h3 h4 {
+  h1, h2, h3, h4 {
     font-weight: 700;
+    color: #3A4374;
   }
   h1 {
     line-height: 35px;
@@ -56,16 +57,19 @@ export const Body1 = styled.p`
   font-size: 16px;
   line-height: 23px;
   font-weight: 400;
+  color: #647196;
 `;
 
 export const Body2 = styled.p`
   font-size: 15px;
   line-height: 22px;
   font-weight: 400;
+  color: #647196;
 `;
 
 export const Body3 = styled.p`
   font-size: 13px;
   line-height: 19px;
   font-weight: 600;
+  color: #647196;
 `;

@@ -1,46 +1,48 @@
 import styled from "styled-components";
-import { Body1, Body2, Body3 } from "../../../GlobalStyles";
+import { Body1, Body2, Body3, CUSTOM_STYLES } from "../../../GlobalStyles";
 
 function Roadmap({ productRequests }) {
-  // console.log(occuranceCount);
+  // filter out suggestions and return statuses
+  const roadmapFilter = productRequests
+    .filter((item) => item.status !== "suggestion")
+    .map((item) => item.status);
 
-  // for roadmap component
-  // const roadmapFilter = productRequests
-  //   .filter((item) => item.status !== "suggestion")
-  //   .map((item) => item.status);
+  // create array with unique statuses only
+  const roadmapStatuses = [...new Set([...roadmapFilter])];
 
-  // const roadmapStatuses = [...new Set([...roadmapFilter])];
+  // get occurances of an item's status
+  const countOccurances = (status) => {
+    return roadmapFilter.filter((item) => item === status).length;
+  };
 
-  // count each status
-  // find length of new array for no of unique vals, get each value, search for each value in the full version
+  const statuses = [
+    {
+      status: roadmapStatuses[0],
+      color: CUSTOM_STYLES.COLORS.lightOrange,
+    },
+    {
+      status: roadmapStatuses[1],
+      color: CUSTOM_STYLES.COLORS.purple,
+    },
+    {
+      status: roadmapStatuses[2],
+      color: CUSTOM_STYLES.COLORS.royalBlue,
+    },
+  ];
 
-  // const countOccurances = (status) => {
-  //   return roadmapFilter.filter((item) => item === status).length;
-  // };
-
-  // const array = ["item 1"];
-  // const count = () => {
-  //   for (let i = 0; i < roadmapStatuses.length; i++) {
-  //     console.log("me", roadmapStatuses[i]);
-  //     return array.push(countOccurances(roadmapStatuses[i]));
-  //   }
-  // };
-  // count();
-
-  // console.log(roadmapStatuses);
-  // console.log(array);
-
-  // const statusOverview = statuses.map((status, i) => {
-  //   return (
-  //     <FlexWrapper key={i}>
-  //       <Circle />
-  //       <Body2>{status}</Body2>
-  //       <InnerMargin>
-  //         <Body1 style={{ fontWeight: 700 }}>{occuranceCount}</Body1>
-  //       </InnerMargin>
-  //     </FlexWrapper>
-  //   );
-  // });
+  const statusOverview = statuses.map((item, i) => {
+    return (
+      <FlexWrapper key={i}>
+        <StyledCircle color={item.color} />
+        <Body2>{item.status}</Body2>
+        <InnerMargin>
+          <Body1 style={{ fontWeight: 700 }}>
+            {countOccurances(item.status)}
+          </Body1>
+        </InnerMargin>
+      </FlexWrapper>
+    );
+  });
 
   return (
     <>
@@ -49,7 +51,7 @@ function Roadmap({ productRequests }) {
         <Body3>View</Body3>
       </FlexWrapper>
       <Spacer />
-      {/* {statusOverview} */}
+      {statusOverview}
     </>
   );
 }
@@ -63,15 +65,16 @@ const FlexWrapper = styled.div`
   align-items: center;
   text-transform: capitalize;
 `;
-const Circle = styled.div`
-  height: 8px;
-  width: 8px;
-  background-color: blue;
-  border-radius: 50%;
-`;
 
 const InnerMargin = styled.div`
   margin-left: auto;
+`;
+
+const StyledCircle = styled.div`
+  height: 8px;
+  width: 8px;
+  background-color: ${(props) => props.color};
+  border-radius: 50%;
 `;
 
 const Spacer = styled.div`

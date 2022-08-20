@@ -1,12 +1,11 @@
 import { CUSTOM_STYLES } from "../GlobalStyles";
 import styled from "styled-components";
-import { Body3 } from "../GlobalStyles";
 
 function Tag({ category }) {
   return (
     <>
       <StyledWrapper>
-        <Body3>{category}</Body3>
+        <StyledBody>{category}</StyledBody>
       </StyledWrapper>
     </>
   );
@@ -26,4 +25,10 @@ const StyledWrapper = styled.div`
     color: white !important;
     cursor: pointer;
   }
+`;
+
+const StyledBody = styled.p`
+  font-size: 13px;
+  line-height: 19px;
+  font-weight: 600;
 `;

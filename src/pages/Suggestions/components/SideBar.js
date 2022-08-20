@@ -21,8 +21,8 @@ function SideBar() {
       <FlexWrapper>
         <FeatureCard bgImage={`url(${bgImage})`}>
           <StyledFeaturedCard>
-            <h2>My SaaS</h2>
-            <Body2>Feedback Board</Body2>
+            <h2 style={{ color: "white" }}>My SaaS</h2>
+            <Body2 style={{ color: "white" }}>Feedback Board</Body2>
           </StyledFeaturedCard>
         </FeatureCard>
         <FeatureCard>
@@ -51,5 +51,4 @@ const StyledFeaturedCard = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
-  color: white;
 `;
