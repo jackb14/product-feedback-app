@@ -1,8 +1,21 @@
 import styled from "styled-components";
 import { CUSTOM_STYLES } from "../../../GlobalStyles";
+import ColumnHeader from "./ColumnHeader";
 import KanbanCard from "./KanbanCard";
 
 function KanbanColumn({ status, data }) {
+  // Column header logic
+  const description = (status) => {
+    if (status === "planned") {
+      return "Ideas prioritized for research";
+    } else if (status === "in-progress") {
+      return "Currently being developed";
+    } else if (status === "live") {
+      return "Released features";
+    }
+  };
+
+  // Column body logic
   const statusColor = (status) => {
     if (status === "planned") {
       return CUSTOM_STYLES.COLORS.lightOrange;
@@ -32,7 +45,14 @@ function KanbanColumn({ status, data }) {
 
   return (
     <>
-      <StyledWrapper>{kanbanItems}</StyledWrapper>
+      <StyledColumnFlex>
+        <ColumnHeader
+          status={status}
+          description={description(status)}
+          total={kanbanItems.length}
+        />
+        <StyledWrapper>{kanbanItems}</StyledWrapper>
+      </StyledColumnFlex>
     </>
   );
 }
@@ -40,6 +60,11 @@ function KanbanColumn({ status, data }) {
 export default KanbanColumn;
 
 const StyledWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const StyledColumnFlex = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
