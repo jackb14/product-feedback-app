@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { CUSTOM_STYLES } from "../../../GlobalStyles";
+import Reply from "./Reply";
 
 function CommentThread({ comments }) {
   // get total comments and replies
@@ -49,6 +50,7 @@ function CommentThread({ comments }) {
                   <ReplyText>Reply</ReplyText>
                 </CommentHeaderWrapper>
                 <TextWrapper>{comment.content}</TextWrapper>
+                <Reply placeholder="Type your comment here" />
               </InnerWrapper>
             </OuterWrapper>
             {comment.replies.map((reply, i) => {

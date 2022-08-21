@@ -1,11 +1,11 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import styled from "styled-components";
 import { CUSTOM_STYLES } from "../../GlobalStyles";
 import GoBack from "../../sharedComponents/GoBack";
 import PrimaryButton from "../../sharedComponents/PrimaryButton";
 import SuggestionCard from "../../sharedComponents/SuggestionCard";
 import { DataContext } from "../../DataContext";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import CommentThread from "./components/CommentThread";
 import CommentCard from "./components/CommentCard";
 
@@ -24,9 +24,11 @@ function FeedbackDetail() {
       <StyledWrapper>
         <HeaderWrapper>
           <GoBack color="dark" />
-          <PrimaryButton color={CUSTOM_STYLES.COLORS.royalBlue}>
-            Edit Feedback
-          </PrimaryButton>
+          <Link to={`/post/${id}/edit`}>
+            <PrimaryButton color={CUSTOM_STYLES.COLORS.royalBlue}>
+              Edit Feedback
+            </PrimaryButton>
+          </Link>
         </HeaderWrapper>
         <SuggestionCard
           noClick={true}

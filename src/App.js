@@ -7,6 +7,7 @@ import { Route, Routes } from "react-router-dom";
 import Roadmap from "./pages/Roadmap/Roadmap";
 import AddFeedback from "./pages/Add Feedback/AddFeedback";
 import FeedbackDetail from "./pages/Feedback Detail/FeedbackDetails";
+import EditFeedback from "./pages/Edit Feedback/EditFeedback";
 
 function App() {
   const [data, setData] = useState(JSON_DATA);
@@ -23,6 +24,7 @@ function App() {
           <Route path="/roadmap" element={<Roadmap />} />
           <Route path="/add-feedback" element={<AddFeedback />} />
           <Route path="/post/:id" element={<FeedbackDetail />} />
+          <Route path="/post/:id/edit" element={<EditFeedback />} />
         </Routes>
         <GlobalStyles />
       </DataContext.Provider>
