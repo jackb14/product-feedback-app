@@ -106,7 +106,10 @@ function CommentThread({ comments }) {
   return (
     <>
       <StyledWrapper>
-        <h2>{totalCommentsAndReplies} Comments</h2>
+        <h2>
+          {totalCommentsAndReplies}{" "}
+          {totalCommentsAndReplies === 1 ? "Comment" : "Comments"}
+        </h2>
         {comments ? commentMap() : "No Comments"}
       </StyledWrapper>
     </>
@@ -123,7 +126,7 @@ const StyledWrapper = styled.div`
 
 const OuterWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
   gap: 1.5rem;
   padding-bottom: 32px;
@@ -134,7 +137,9 @@ const NoReplyWrapper = styled.div`
   border-bottom: 2px solid ${CUSTOM_STYLES.COLORS.lightGrey};
 `;
 
-const InnerWrapper = styled.div``;
+const InnerWrapper = styled.div`
+  width: 100%;
+`;
 
 const CommentHeaderWrapper = styled.div`
   display: flex;

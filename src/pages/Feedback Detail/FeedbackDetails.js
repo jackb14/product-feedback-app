@@ -7,6 +7,7 @@ import SuggestionCard from "../../sharedComponents/SuggestionCard";
 import { DataContext } from "../../DataContext";
 import { useContext, useState } from "react";
 import CommentThread from "./components/CommentThread";
+import CommentCard from "./components/CommentCard";
 
 function FeedbackDetail() {
   const { id } = useParams();
@@ -38,6 +39,7 @@ function FeedbackDetail() {
           id={id}
         />
         <CommentThread data={data} comments={comments} />
+        <CommentCard />
       </StyledWrapper>
     </>
   );
