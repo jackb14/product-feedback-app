@@ -15,7 +15,7 @@ function CommentCount({ comments }) {
     <>
       <StyledWrapper>
         <img src={commentIcon} alt="comment icon" />
-        <Body1>{calculateCommentCount()}</Body1>
+        <Body1 style={{ fontWeight: 600 }}>{calculateCommentCount()}</Body1>
       </StyledWrapper>
     </>
   );

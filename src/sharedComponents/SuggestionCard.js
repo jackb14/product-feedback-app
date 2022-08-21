@@ -1,10 +1,19 @@
-import { Body1, CUSTOM_STYLES } from "../../../GlobalStyles";
-import Tag from "../../../sharedComponents/Tag";
+import { Body1, CUSTOM_STYLES } from "../GlobalStyles";
+import Tag from "./Tag";
 import styled from "styled-components";
-import Upvote from "../../../sharedComponents/Upvote";
-import CommentCount from "../../../sharedComponents/CommentCount";
+import Upvote from "./Upvote";
+import CommentCount from "./CommentCount";
+import { Link } from "react-router-dom";
 
-function SuggestionCard({ title, description, category, comments, upvotes }) {
+function SuggestionCard({
+  noClick,
+  title,
+  description,
+  category,
+  comments,
+  upvotes,
+  id,
+}) {
   return (
     <>
       <StyledWrapper>
@@ -16,7 +25,15 @@ function SuggestionCard({ title, description, category, comments, upvotes }) {
             height="55px"
           />
           <div>
-            <h3>{title}</h3>
+            {noClick === true ? (
+              <HeadingWrapper>{title}</HeadingWrapper>
+            ) : (
+              <Link to={`/post/${id}`}>
+                <HeadingWrapper hoverColor={CUSTOM_STYLES.COLORS.royalBlue}>
+                  {title}
+                </HeadingWrapper>
+              </Link>
+            )}
             <Body1>{description}</Body1>
             <MarginWrapper>
               <Tag category={category} />
@@ -54,4 +71,10 @@ const MarginWrapper = styled.div`
   margin-top: 12px;
   display: flex;
   justify-content: flex-start;
+`;
+
+const HeadingWrapper = styled.h3`
+  &:hover {
+    color: ${(props) => props.hoverColor};
+  }
 `;

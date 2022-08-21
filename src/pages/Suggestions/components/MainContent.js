@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import { Body1, CUSTOM_STYLES } from "../../../GlobalStyles";
 import Header from "../../../sharedComponents/Header";
-import SuggestionCard from "./SuggestionCard";
 import suggestionsIcon from "../../../assets/suggestions/icon-suggestions.svg";
 import { DataContext } from "../../../DataContext";
 import { useContext } from "react";
 import LargeCard from "./LargeCard";
 import notFound from "../../../assets/suggestions/illustration-empty.svg";
+import SuggestionCard from "../../../sharedComponents/SuggestionCard";
 
 function MainContent() {
   const data = useContext(DataContext);
@@ -22,6 +22,7 @@ function MainContent() {
         category={item.category}
         upvotes={item.upvotes}
         comments={item.comments}
+        id={item.id}
       />
     ));
 

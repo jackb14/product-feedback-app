@@ -9,12 +9,11 @@ export const GlobalStyles = createGlobalStyle`
   }
   html {
     font-size: 1.125rem;
-    max-width: 1110px;
-    margin: auto;
     font-family: 'Jost', arial, sans-serif;
   }
   body {
     background-color: #E3E7FA;
+    margin-bottom: 94px;
   }
   input {
     font-family: 'Jost', arial, sans-serif;

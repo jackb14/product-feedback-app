@@ -19,5 +19,7 @@ const StyledWrapper = styled.div`
   display: flex;
   justify-content: center;
   padding-top: 94px;
+  max-width: 1110px;
+  margin: auto;
   gap: 1.8rem;
 `;

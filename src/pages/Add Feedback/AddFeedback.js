@@ -92,6 +92,8 @@ const StyledWrapper = styled.div`
   justify-content: center;
   padding-top: 94px;
   gap: 1.8rem;
+  max-width: 1110px;
+  margin: auto;
 `;
 
 const ButtonWrapper = styled.div`
