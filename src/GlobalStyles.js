@@ -11,10 +11,31 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 1.125rem;
     max-width: 1110px;
     margin: auto;
+    font-family: 'Jost', arial, sans-serif;
   }
   body {
     background-color: #E3E7FA;
+  }
+  input {
     font-family: 'Jost', arial, sans-serif;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-size: 16px;
+    background-color: #E3E7FA;
+  }
+  textarea {
+    font-family: 'Jost', arial, sans-serif;
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-top: 10px;
+    font-size: 16px;
+    background-color: #E3E7FA;
   }
   a {
     text-decoration: none;
@@ -52,6 +73,7 @@ export const CUSTOM_STYLES = {
     darkGrey: "#647196",
     lightOrange: "#F49F85",
     lightBlue: "#62BCFA",
+    red: "#D73737",
   },
   OTHER: {
     borderRadius: "10px",

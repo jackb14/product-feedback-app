@@ -1,10 +1,12 @@
 import { CUSTOM_STYLES } from "../GlobalStyles";
 import styled from "styled-components";
 
-function PrimaryButton({ children, link, color }) {
+function PrimaryButton({ children, color, padding }) {
   return (
     <>
-      <StyledButton style={{ backgroundColor: color }}>{children}</StyledButton>
+      <StyledButton padding={padding} style={{ backgroundColor: color }}>
+        {children}
+      </StyledButton>
     </>
   );
 }
@@ -12,7 +14,7 @@ function PrimaryButton({ children, link, color }) {
 export default PrimaryButton;
 
 const StyledButton = styled.button`
-  padding: 12px 24px;
+  padding: ${(props) => props.padding || "12px 24px"};
   border-radius: ${CUSTOM_STYLES.OTHER.borderRadius};
   border: none;
   color: white;

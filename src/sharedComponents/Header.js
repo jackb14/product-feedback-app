@@ -1,15 +1,18 @@
 import { CUSTOM_STYLES } from "../GlobalStyles";
 import PrimaryButton from "./PrimaryButton";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 function Header({ children }) {
   return (
     <>
       <StyledHeader>
         <StyledWrapper>{children}</StyledWrapper>
-        <PrimaryButton color={CUSTOM_STYLES.COLORS.purple}>
-          + Add Feedback
-        </PrimaryButton>
+        <Link to="/add-feedback">
+          <PrimaryButton color={CUSTOM_STYLES.COLORS.purple}>
+            + Add Feedback
+          </PrimaryButton>
+        </Link>
       </StyledHeader>
     </>
   );
