@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { CUSTOM_STYLES } from "../../../GlobalStyles";
-import Reply from "./Reply";
+import userImage from "../../../assets/user-images/image-george.jpg";
 
 function CommentThread({ comments }) {
   // get total comments and replies
@@ -40,7 +40,7 @@ function CommentThread({ comments }) {
         return (
           <div key={i}>
             <OuterWrapper>
-              <p>IMAGE</p>
+              <StyledImg src={userImage} alt="user" />
               <InnerWrapper>
                 <CommentHeaderWrapper>
                   <UserWrapper>
@@ -50,14 +50,13 @@ function CommentThread({ comments }) {
                   <ReplyText>Reply</ReplyText>
                 </CommentHeaderWrapper>
                 <TextWrapper>{comment.content}</TextWrapper>
-                <Reply placeholder="Type your comment here" />
               </InnerWrapper>
             </OuterWrapper>
             {comment.replies.map((reply, i) => {
               return (
                 <ReplyWrapper key={i}>
                   <OuterWrapper>
-                    <p>IMAGE</p>
+                    <StyledImg src={userImage} alt="user" />
                     <InnerWrapper>
                       <CommentHeaderWrapper>
                         <UserWrapper>
@@ -88,7 +87,7 @@ function CommentThread({ comments }) {
         return (
           <NoReplyWrapper key={i}>
             <OuterWrapper>
-              <p>IMAGE</p>
+              <StyledImg src={userImage} alt="user" />
               <InnerWrapper>
                 <CommentHeaderWrapper>
                   <UserWrapper>
@@ -171,4 +170,10 @@ const ReplyText = styled.p`
   color: ${CUSTOM_STYLES.COLORS.royalBlue};
   font-weight: 600;
   font-size: 15px;
+`;
+
+const StyledImg = styled.img`
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
 `;
