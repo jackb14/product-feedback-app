@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 
 function AddFeedback() {
   const [titleValue, setTitleValue] = useState();
-  const [categoryValue, setCategoryValue] = useState();
+  const [setCategoryValue] = useState();
   const [textAreaValue, setTextAreaValue] = useState();
   const [titleError, setTitleError] = useState(false);
   const [textAreaError, setTextAreaError] = useState(false);

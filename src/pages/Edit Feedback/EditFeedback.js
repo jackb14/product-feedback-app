@@ -1,41 +1,41 @@
-import { CUSTOM_STYLES } from "../../GlobalStyles";
+// import { CUSTOM_STYLES } from "../../GlobalStyles";
 import styled from "styled-components";
 import { DataContext } from "../../DataContext";
-import { useParams, Link } from "react-router-dom";
-import { useContext, useState } from "react";
-import PrimaryButton from "../../sharedComponents/PrimaryButton";
+import { useParams } from "react-router-dom";
+import { useContext } from "react";
+// import PrimaryButton from "../../sharedComponents/PrimaryButton";
 import FormCard from "../../sharedComponents/FormCard";
-import FormElementIntro from "../../sharedComponents/FormElementIntro";
-import ShortTextInput from "../../sharedComponents/ShortTextInput";
-import DropdownSelector from "../../sharedComponents/DropdownSelector";
-import TextAreaInput from "../../sharedComponents/TextAreaInput";
+// import FormElementIntro from "../../sharedComponents/FormElementIntro";
+// import ShortTextInput from "../../sharedComponents/ShortTextInput";
+// import DropdownSelector from "../../sharedComponents/DropdownSelector";
+// import TextAreaInput from "../../sharedComponents/TextAreaInput";
 import icon from "../../assets/shared/icon-new-feedback.svg";
 
 function EditFeedback() {
   const { id } = useParams();
   const data = useContext(DataContext);
   const { productRequests } = data.data;
-  const [titleValue, setTitleValue] = useState();
-  const [categoryValue, setCategoryValue] = useState();
-  const [textAreaValue, setTextAreaValue] = useState();
-  const [titleError, setTitleError] = useState(false);
-  const [textAreaError, setTextAreaError] = useState(false);
+  // const [titleValue, setTitleValue] = useState();
+  // const [categoryValue, setCategoryValue] = useState();
+  // const [textAreaValue, setTextAreaValue] = useState();
+  // const [titleError, setTitleError] = useState(false);
+  // const [textAreaError, setTextAreaError] = useState(false);
 
-  const handleSubmit = () => {
-    if (!titleValue) {
-      setTitleError(true);
-      setTextAreaError(false);
-    } else if (!textAreaValue) {
-      setTextAreaError(true);
-      setTitleError(false);
-    } else {
-      setTitleError(false);
-      setTextAreaError(false);
-    }
-  };
+  // const handleSubmit = () => {
+  //   if (!titleValue) {
+  //     setTitleError(true);
+  //     setTextAreaError(false);
+  //   } else if (!textAreaValue) {
+  //     setTextAreaError(true);
+  //     setTitleError(false);
+  //   } else {
+  //     setTitleError(false);
+  //     setTextAreaError(false);
+  //   }
+  // };
 
   const postDetails = productRequests.filter((item) => item.id === Number(id));
-  const { title, description, status, category, comments } = postDetails[0];
+  const { title } = postDetails[0];
 
   return (
     <StyledWrapper>
@@ -103,16 +103,16 @@ const StyledWrapper = styled.div`
   margin: auto;
 `;
 
-const ButtonWrapper = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 2rem;
-`;
+// const ButtonWrapper = styled.div`
+//   display: flex;
+//   justify-content: flex-end;
+//   align-items: center;
+//   gap: 1rem;
+//   margin-top: 2rem;
+// `;
 
-const ErrorMessage = styled.div`
-  color: ${CUSTOM_STYLES.COLORS.red};
-  font-size: 15px;
-  margin-top: 5px;
-`;
+// const ErrorMessage = styled.div`
+//   color: ${CUSTOM_STYLES.COLORS.red};
+//   font-size: 15px;
+//   margin-top: 5px;
+// `;

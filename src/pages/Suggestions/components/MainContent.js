@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Body1, CUSTOM_STYLES } from "../../../GlobalStyles";
+import { CUSTOM_STYLES } from "../../../GlobalStyles";
 import Header from "../../../sharedComponents/Header";
 import suggestionsIcon from "../../../assets/suggestions/icon-suggestions.svg";
 import { DataContext } from "../../../DataContext";
