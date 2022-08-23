@@ -46,7 +46,7 @@ function MainContent() {
             {suggestions.length !== 1 ? "Suggestions" : "Suggestion"}
           </h2>
           <MarginWrapper>
-            <Body1 style={{ color: "white" }}>Sort by:</Body1>
+            {/* <Body1 style={{ color: "white" }}>Sort by:</Body1> */}
           </MarginWrapper>
         </Header>
         {suggestions ? suggestions : noFeedbackCard}
