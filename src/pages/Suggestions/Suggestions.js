@@ -22,4 +22,8 @@ const StyledWrapper = styled.div`
   max-width: 1110px;
   margin: auto;
   gap: 1.8rem;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin: 40px;
+  }
 `;
