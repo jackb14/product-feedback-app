@@ -1,7 +1,15 @@
-# Product Feedback App
+# Feedback Forum
 
-Technologies used:
+### Description
 
-- React
-- Styled Components
-- React Router
+A fictional feedback forum showcasing user suggestions and a kanban style product roadmap. Users are able to submit new feedback as well as edit suggestions.
+
+View the deployed app by [clicking here](https://jackb.co/projects)
+
+### Technologies Used
+
+React, styled-components, React Router
+
+### Run Commands
+
+Start locally by using `npm run start`
