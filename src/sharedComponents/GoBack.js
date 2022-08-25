@@ -31,6 +31,10 @@ const LinkWrapper = styled.div`
   justify-content: flex-start;
   align-items: center;
   gap: 0.5rem;
+  @media (max-width: 768px) {
+    width: 90%;
+    margin: auto;
+  }
 `;
 
 const TextWrapper = styled.p`

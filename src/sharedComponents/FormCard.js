@@ -27,6 +27,10 @@ const StyledFormWrapper = styled.div`
   width: 600px;
   padding: 52px 42px;
   position: relative;
+  @media (max-width: 768px) {
+    width: 90%;
+    margin: auto;
+  }
 `;
 
 const StyledFlex = styled.div`

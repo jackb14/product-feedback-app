@@ -90,4 +90,8 @@ const ViewLink = styled.p`
   font-weight: 600;
   color: ${CUSTOM_STYLES.COLORS.royalBlue};
   text-decoration: underline;
+
+  &:hover {
+    opacity: 90%;
+  }
 `;

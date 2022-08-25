@@ -1,15 +1,30 @@
 import styled from "styled-components";
-import { CUSTOM_STYLES } from "../../../GlobalStyles";
+import { Body1, CUSTOM_STYLES } from "../../../GlobalStyles";
 import Header from "../../../sharedComponents/Header";
 import suggestionsIcon from "../../../assets/suggestions/icon-suggestions.svg";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import LargeCard from "./LargeCard";
 import notFound from "../../../assets/suggestions/illustration-empty.svg";
 import SuggestionCard from "../../../sharedComponents/SuggestionCard";
 import { FilteredDataContext } from "../FilteredDataContext";
+import DropdownSelector from "../../../sharedComponents/DropdownSelector";
 
 function MainContent() {
   const { filteredData } = useContext(FilteredDataContext);
+  const [categoryValue, setCategoryValue] = useState();
+
+  const sortData = () => {
+    if (categoryValue === "Most Upvotes") {
+      return filteredData.sort((a, b) => {
+        return b.upvotes - a.upvotes;
+      });
+    } else if (categoryValue === "Least Upvotes") {
+      return filteredData.sort((a, b) => {
+        return a.upvotes - b.upvotes;
+      });
+    }
+  };
+  sortData();
 
   const suggestions = filteredData
     .filter((item) => item.status === "suggestion")
@@ -45,7 +60,20 @@ function MainContent() {
             {suggestions.length !== 1 ? "Suggestions" : "Suggestion"}
           </h2>
           <MarginWrapper>
-            {/* <Body1 style={{ color: "white" }}>Sort by:</Body1> */}
+            <div style={{ width: "100px" }}>
+              <Body1 style={{ color: "white" }}>Sort by:</Body1>
+            </div>
+            <DropdownSelector
+              type="header"
+              setValue={setCategoryValue}
+              categoryValue={categoryValue}
+              options={[
+                "Most Upvotes",
+                "Least Upvotes",
+                "Most Comments",
+                "Least Comments",
+              ]}
+            />
           </MarginWrapper>
         </Header>
         {suggestions ? suggestions : noFeedbackCard}
@@ -61,5 +89,9 @@ const StyledWrapper = styled.div`
 `;
 
 const MarginWrapper = styled.div`
-  margin-left: auto;
+  margin-left: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
 `;

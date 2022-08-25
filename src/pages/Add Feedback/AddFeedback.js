@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 
 function AddFeedback() {
   const [titleValue, setTitleValue] = useState();
-  const [setCategoryValue] = useState();
+  const [categoryValue, setCategoryValue] = useState();
   const [textAreaValue, setTextAreaValue] = useState();
   const [titleError, setTitleError] = useState(false);
   const [textAreaError, setTextAreaError] = useState(false);
@@ -50,7 +50,11 @@ function AddFeedback() {
           title="Category"
           description="Choose a category for your feedback"
         />
-        <DropdownSelector setValue={setCategoryValue} />
+        <DropdownSelector
+          setValue={setCategoryValue}
+          categoryValue={categoryValue}
+          options={["Feature", "UI", "UX", "Enhancement", "Bug"]}
+        />
         <FormElementIntro
           title="Feedback Detail"
           description="Include any specific comments on what should be improved, added, etc."
@@ -102,6 +106,10 @@ const ButtonWrapper = styled.div`
   align-items: center;
   gap: 1rem;
   margin-top: 2rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const ErrorMessage = styled.div`

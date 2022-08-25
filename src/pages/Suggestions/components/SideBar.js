@@ -9,9 +9,6 @@ import { useContext } from "react";
 
 function SideBar() {
   const { data } = useContext(DataContext);
-  // const { productRequests } = data;
-
-  console.log(data);
 
   // for tags component
   const categoriesMap = data.map((item) => item.category);
@@ -45,11 +42,17 @@ const FlexWrapper = styled.div`
   flex-direction: column;
   gap: 1.5rem;
   flex: 0 1 255px;
+  @media (max-width: 768px) {
+    flex-direction: row;
+    width: 100%;
+    flex: 0 1 50px;
+  }
 `;
 
 const StyledFeaturedCard = styled.div`
   display: flex;
   height: 80px;
+  min-width: 200px;
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;

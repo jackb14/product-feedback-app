@@ -33,6 +33,7 @@ const StyledWrapper = styled.div`
   gap: 1.8rem;
   @media (max-width: 768px) {
     flex-direction: column;
-    margin: 40px;
+    margin: 2rem;
+    padding-top: 32px;
   }
 `;

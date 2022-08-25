@@ -56,6 +56,10 @@ const StyledWrapper = styled.div`
   gap: 1rem;
   max-width: 770px;
   margin: auto;
+  @media (max-width: 768px) {
+    padding-top: 32px;
+    margin: 2rem;
+  }
 `;
 
 const HeaderWrapper = styled.div`

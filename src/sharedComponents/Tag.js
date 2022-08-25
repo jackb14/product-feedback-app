@@ -33,7 +33,8 @@ function Tag({ category, hover }) {
 
 export default Tag;
 
-const StyledWrapper = styled.div`
+const StyledWrapper = styled.button`
+  border: none;
   background-color: ${CUSTOM_STYLES.COLORS.blueyWhite};
   border-radius: ${CUSTOM_STYLES.OTHER.borderRadius};
   text-transform: capitalize;

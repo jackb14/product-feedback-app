@@ -20,6 +20,10 @@ const StyledButton = styled.button`
   color: white;
   font-weight: 600;
 
+  @media (max-width: 768px) {
+    width: 200px;
+  }
+
   &:hover {
     cursor: pointer;
     opacity: 90%;
