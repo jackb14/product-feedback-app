@@ -1,17 +1,17 @@
 import Tag from "./Tag";
 import styled from "styled-components";
 
-function Tags({ categories }) {
+function Tags({ categories, hover }) {
   // generate tags here based on input
 
   const tagMap = categories.map((category, i) => (
-    <Tag key={i} category={category} />
+    <Tag key={i} category={category} hover={hover} />
   ));
 
   return (
     <>
       <StyledWrapper>
-        <Tag category="All" />
+        <Tag category="All" hover={hover} />
         {tagMap}
       </StyledWrapper>
     </>

@@ -13,8 +13,7 @@ import icon from "../../assets/shared/icon-new-feedback.svg";
 
 function EditFeedback() {
   const { id } = useParams();
-  const data = useContext(DataContext);
-  const { productRequests } = data.data;
+  const { data } = useContext(DataContext);
   // const [titleValue, setTitleValue] = useState();
   // const [categoryValue, setCategoryValue] = useState();
   // const [textAreaValue, setTextAreaValue] = useState();
@@ -34,7 +33,7 @@ function EditFeedback() {
   //   }
   // };
 
-  const postDetails = productRequests.filter((item) => item.id === Number(id));
+  const postDetails = data.filter((item) => item.id === Number(id));
   const { title } = postDetails[0];
 
   return (

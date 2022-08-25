@@ -4,15 +4,14 @@ import { DataContext } from "../../../DataContext";
 import { useContext } from "react";
 
 function Kanban() {
-  const data = useContext(DataContext);
-  const { productRequests } = data.data;
+  const { data } = useContext(DataContext);
 
   return (
     <>
       <FlexWrapper>
-        <KanbanColumn status="planned" data={productRequests} />
-        <KanbanColumn status="in-progress" data={productRequests} />
-        <KanbanColumn status="live" data={productRequests} />
+        <KanbanColumn status="planned" data={data} />
+        <KanbanColumn status="in-progress" data={data} />
+        <KanbanColumn status="live" data={data} />
       </FlexWrapper>
     </>
   );

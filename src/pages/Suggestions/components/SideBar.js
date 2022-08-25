@@ -8,11 +8,13 @@ import { DataContext } from "../../../DataContext";
 import { useContext } from "react";
 
 function SideBar() {
-  const data = useContext(DataContext);
-  const { productRequests } = data.data;
+  const { data } = useContext(DataContext);
+  // const { productRequests } = data;
+
+  console.log(data);
 
   // for tags component
-  const categoriesMap = productRequests.map((item) => item.category);
+  const categoriesMap = data.map((item) => item.category);
   // Set removes duplicates and then converts to array
   const categories = [...new Set([...categoriesMap])];
 
@@ -26,10 +28,10 @@ function SideBar() {
           </StyledFeaturedCard>
         </FeatureCard>
         <FeatureCard>
-          <Tags categories={categories} />
+          <Tags categories={categories} hover="true" />
         </FeatureCard>
         <FeatureCard>
-          <Roadmap productRequests={productRequests} />
+          <Roadmap productRequests={data} />
         </FeatureCard>
       </FlexWrapper>
     </>

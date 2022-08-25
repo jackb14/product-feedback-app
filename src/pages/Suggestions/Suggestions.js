@@ -1,13 +1,22 @@
+import { useContext, useState } from "react";
 import styled from "styled-components";
+import { DataContext } from "../../DataContext";
 import MainContent from "./components/MainContent";
 import SideBar from "./components/SideBar";
+import { FilteredDataContext } from "./FilteredDataContext";
 
 function Suggestions() {
+  const { data } = useContext(DataContext);
+  const [filteredData, setFilteredData] = useState(data);
+  const value = { filteredData, setFilteredData };
+
   return (
     <>
       <StyledWrapper>
-        <SideBar />
-        <MainContent />
+        <FilteredDataContext.Provider value={value}>
+          <SideBar />
+          <MainContent />
+        </FilteredDataContext.Provider>
       </StyledWrapper>
     </>
   );

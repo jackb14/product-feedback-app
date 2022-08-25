@@ -10,10 +10,11 @@ import FeedbackDetail from "./pages/Feedback Detail/FeedbackDetails";
 import EditFeedback from "./pages/Edit Feedback/EditFeedback";
 
 function App() {
-  const [data, setData] = useState(JSON_DATA);
+  const { productRequests } = JSON_DATA;
+  const [data, setData] = useState(productRequests);
   const value = { data, setData };
 
-  console.table(data);
+  // console.table(data);
 
   return (
     <>

@@ -11,10 +11,9 @@ import CommentCard from "./components/CommentCard";
 
 function FeedbackDetail() {
   const { id } = useParams();
-  const data = useContext(DataContext);
-  const { productRequests } = data.data;
+  const { data } = useContext(DataContext);
 
-  const postDetails = productRequests.filter((item) => item.id === Number(id));
+  const postDetails = data.filter((item) => item.id === Number(id));
   const { title, description, upvotes, category, comments } = postDetails[0];
 
   // TODO - handle logic for id greater than available

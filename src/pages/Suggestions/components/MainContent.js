@@ -2,17 +2,16 @@ import styled from "styled-components";
 import { CUSTOM_STYLES } from "../../../GlobalStyles";
 import Header from "../../../sharedComponents/Header";
 import suggestionsIcon from "../../../assets/suggestions/icon-suggestions.svg";
-import { DataContext } from "../../../DataContext";
 import { useContext } from "react";
 import LargeCard from "./LargeCard";
 import notFound from "../../../assets/suggestions/illustration-empty.svg";
 import SuggestionCard from "../../../sharedComponents/SuggestionCard";
+import { FilteredDataContext } from "../FilteredDataContext";
 
 function MainContent() {
-  const data = useContext(DataContext);
-  const { productRequests } = data.data;
+  const { filteredData } = useContext(FilteredDataContext);
 
-  const suggestions = productRequests
+  const suggestions = filteredData
     .filter((item) => item.status === "suggestion")
     .map((item) => (
       <SuggestionCard
