@@ -22,4 +22,7 @@ export default Kanban;
 const FlexWrapper = styled.div`
   display: flex;
   gap: 2rem;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;

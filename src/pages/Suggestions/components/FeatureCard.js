@@ -19,9 +19,10 @@ const StyledWrapper = styled.div`
   max-width: 250px;
 
   @media (max-width: 768px) {
-    /* padding: 16px; */
+    max-width: 100%;
+    background-size: cover !important;
 
-    &:nth-child(1) {
+    /* &:nth-child(1) {
       max-width: 180px;
       height: 100%;
       max-height: 160px;
@@ -36,6 +37,6 @@ const StyledWrapper = styled.div`
       width: 100%;
       max-width: 200px;
       max-height: 160px;
-    }
+    } */
   }
 `;

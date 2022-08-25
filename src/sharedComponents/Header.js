@@ -28,6 +28,10 @@ const StyledHeader = styled.div`
   background-color: ${CUSTOM_STYLES.COLORS.darkBlue};
   padding: 14px 16px;
   border-radius: ${CUSTOM_STYLES.OTHER.borderRadius};
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
 `;
 
 const StyledWrapper = styled.div`
@@ -35,4 +39,8 @@ const StyledWrapper = styled.div`
   align-items: center;
   justify-content: flex-start;
   gap: 1rem;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
 `;

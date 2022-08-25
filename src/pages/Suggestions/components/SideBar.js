@@ -43,9 +43,7 @@ const FlexWrapper = styled.div`
   gap: 1.5rem;
   flex: 0 1 255px;
   @media (max-width: 768px) {
-    flex-direction: row;
     width: 100%;
-    flex: 0 1 50px;
   }
 `;
 

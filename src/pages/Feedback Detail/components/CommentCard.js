@@ -57,6 +57,10 @@ const CardFooterWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-top: 16px;
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
 `;
 
 const ErrorMessage = styled.div`
