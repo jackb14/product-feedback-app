@@ -11,13 +11,12 @@ import EditFeedback from "./pages/Edit Feedback/EditFeedback";
 
 function App() {
   const { productRequests } = JSON_DATA;
-  const [intermediaryData, setIntermediaryData] = useState(productRequests);
+  const [mount, setMount] = useState(false);
   const [data, setData] = useState(productRequests);
   const value = { data, setData };
 
   let commentsArr = [];
   let repliesArr = [];
-
   // comment count
   data.map((item) => {
     if (item.comments) {
@@ -26,8 +25,6 @@ function App() {
       return commentsArr.push(0);
     }
   });
-
-  console.log("comments", commentsArr);
 
   // replies count
   data.map((item) => {
@@ -42,16 +39,11 @@ function App() {
     }
   });
 
-  console.log("replies", repliesArr);
-
   let groupedRepliesArr = [];
   for (let i = 0; i < data.length; i++) {
-    console.log("ran");
     groupedRepliesArr.push(repliesArr.slice(0, commentsArr[i]));
     repliesArr.splice(0, commentsArr[i]);
   }
-
-  console.log("groupedRepliesArr", groupedRepliesArr);
 
   // sum reply groups
   const replyGroupSum = groupedRepliesArr.map((item) => {
@@ -59,8 +51,6 @@ function App() {
       return acc + cum;
     }, 0);
   });
-
-  console.log(replyGroupSum);
 
   // add comment count and reply count to data state
   let completeData = [];
@@ -73,10 +63,16 @@ function App() {
       });
     }
   };
-
   combineRepliesAndComments();
 
-  console.log(completeData);
+  useEffect(() => {
+    if (!mount) {
+      setMount(true);
+      setData(completeData);
+    }
+  }, [mount, completeData]);
+
+  console.log(data);
 
   return (
     <>
