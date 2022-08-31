@@ -13,6 +13,8 @@ function MainContent() {
   const { filteredData } = useContext(FilteredDataContext);
   const [categoryValue, setCategoryValue] = useState();
 
+  // const totalCommentsAndReplies = totalReplies + totalComments;
+
   const sortData = () => {
     if (categoryValue === "Most Upvotes") {
       return filteredData.sort((a, b) => {
@@ -21,6 +23,14 @@ function MainContent() {
     } else if (categoryValue === "Least Upvotes") {
       return filteredData.sort((a, b) => {
         return a.upvotes - b.upvotes;
+      });
+    } else if (categoryValue === "Most Comments") {
+      return filteredData.sort((a, b) => {
+        return b.totalCommentsAndReplies - a.totalCommentsAndReplies;
+      });
+    } else if (categoryValue === "Least Comments") {
+      return filteredData.sort((a, b) => {
+        return a.totalCommentsAndReplies - b.totalCommentsAndReplies;
       });
     }
   };
@@ -35,7 +45,8 @@ function MainContent() {
         description={item.description}
         category={item.category}
         upvotes={item.upvotes}
-        comments={item.comments}
+        totalComments={item.totalComments}
+        totalReplies={item.totalReplies}
         id={item.id}
       />
     ));

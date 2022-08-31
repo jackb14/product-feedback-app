@@ -18,7 +18,7 @@ function App() {
   let commentsArr = [];
   let repliesArr = [];
   // comment count
-  data.map((item) => {
+  productRequests.map((item) => {
     if (item.comments) {
       return commentsArr.push(item.comments.length);
     } else {
@@ -27,7 +27,7 @@ function App() {
   });
 
   // replies count
-  data.map((item) => {
+  productRequests.map((item) => {
     if (item.comments) {
       return item.comments.map((comment) => {
         if (comment.replies) {
@@ -36,11 +36,13 @@ function App() {
           return repliesArr.push(0);
         }
       });
+    } else {
+      return null;
     }
   });
 
   let groupedRepliesArr = [];
-  for (let i = 0; i < data.length; i++) {
+  for (let i = 0; i < productRequests.length; i++) {
     groupedRepliesArr.push(repliesArr.slice(0, commentsArr[i]));
     repliesArr.splice(0, commentsArr[i]);
   }
@@ -55,9 +57,9 @@ function App() {
   // add comment count and reply count to data state
   let completeData = [];
   const combineRepliesAndComments = () => {
-    for (let j = 0; j < data.length; j++) {
+    for (let j = 0; j < productRequests.length; j++) {
       completeData.push({
-        ...data[j],
+        ...productRequests[j],
         totalReplies: replyGroupSum[j],
         totalComments: commentsArr[j],
       });

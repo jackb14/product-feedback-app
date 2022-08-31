@@ -5,7 +5,7 @@ import GoBack from "../../sharedComponents/GoBack";
 import PrimaryButton from "../../sharedComponents/PrimaryButton";
 import SuggestionCard from "../../sharedComponents/SuggestionCard";
 import { DataContext } from "../../DataContext";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import CommentThread from "./components/CommentThread";
 import CommentCard from "./components/CommentCard";
 
@@ -13,8 +13,24 @@ function FeedbackDetail() {
   const { id } = useParams();
   const { data } = useContext(DataContext);
 
+  // useEffect(() => {
+  //   if (data.length > 0) {
+  //     setFeedbackData(data);
+  //   }
+  // }, [data]);
+
   const postDetails = data.filter((item) => item.id === Number(id));
-  const { title, description, upvotes, category, comments } = postDetails[0];
+  console.log("postDetails", postDetails);
+
+  const {
+    title,
+    description,
+    upvotes,
+    category,
+    comments,
+    totalReplies,
+    totalComments,
+  } = postDetails[0];
 
   // TODO - handle logic for id greater than available
 
@@ -36,7 +52,8 @@ function FeedbackDetail() {
           description={description}
           category={category}
           upvotes={upvotes}
-          comments={comments}
+          totalComments={totalComments}
+          totalReplies={totalReplies}
           id={id}
         />
         <CommentThread data={data} comments={comments} />

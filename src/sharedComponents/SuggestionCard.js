@@ -13,6 +13,8 @@ function SuggestionCard({
   comments,
   upvotes,
   id,
+  totalReplies,
+  totalComments,
 }) {
   return (
     <>
@@ -41,7 +43,10 @@ function SuggestionCard({
           </div>
         </InnerWrapper>
         <div>
-          <CommentCount comments={comments} />
+          <CommentCount
+            totalReplies={totalReplies}
+            totalComments={totalComments}
+          />
         </div>
       </StyledWrapper>
     </>
