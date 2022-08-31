@@ -13,7 +13,7 @@ function MainContent() {
   const { filteredData } = useContext(FilteredDataContext);
   const [categoryValue, setCategoryValue] = useState();
 
-  // const totalCommentsAndReplies = totalReplies + totalComments;
+  console.log("filteredData", filteredData);
 
   const sortData = () => {
     if (categoryValue === "Most Upvotes") {

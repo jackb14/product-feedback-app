@@ -11,8 +11,6 @@ function CommentCount({ totalComments, totalReplies }) {
   //   }
   // };
 
-  console.log(totalReplies);
-
   return (
     <>
       <StyledWrapper>

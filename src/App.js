@@ -62,6 +62,7 @@ function App() {
         ...productRequests[j],
         totalReplies: replyGroupSum[j],
         totalComments: commentsArr[j],
+        totalCommentsAndReplies: replyGroupSum[j] + commentsArr[j],
       });
     }
   };
