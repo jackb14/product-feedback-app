@@ -2,7 +2,7 @@ import { Body1 } from "../GlobalStyles";
 import commentIcon from "../assets/shared/icon-comments.svg";
 import styled from "styled-components";
 
-function CommentCount({ totalComments, totalReplies }) {
+function CommentCount({ totalCommentsAndReplies }) {
   // const calculateCommentCount = () => {
   //   if (comments) {
   //     return comments.length;
@@ -16,7 +16,7 @@ function CommentCount({ totalComments, totalReplies }) {
       <StyledWrapper>
         <img src={commentIcon} alt="comment icon" />
         <Body1 style={{ fontWeight: 600 }}>
-          {totalComments + totalReplies}
+          {totalCommentsAndReplies}
         </Body1>
       </StyledWrapper>
     </>

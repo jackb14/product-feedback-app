@@ -38,8 +38,7 @@ function KanbanColumn({ status, data }) {
           description={item.description}
           category={item.category}
           upvotes={item.upvotes}
-          totalComments={item.totalComments}
-          totalReplies={item.totalReplies}
+          totalCommentsAndReplies={item.totalCommentsAndReplies}
         />
       );
     });

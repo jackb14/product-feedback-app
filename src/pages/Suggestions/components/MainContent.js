@@ -45,8 +45,7 @@ function MainContent() {
         description={item.description}
         category={item.category}
         upvotes={item.upvotes}
-        totalComments={item.totalComments}
-        totalReplies={item.totalReplies}
+        totalCommentsAndReplies={item.totalCommentsAndReplies}
         id={item.id}
       />
     ));
