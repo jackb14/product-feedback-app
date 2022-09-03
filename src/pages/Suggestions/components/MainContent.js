@@ -13,8 +13,6 @@ function MainContent() {
   const { filteredData } = useContext(FilteredDataContext);
   const [categoryValue, setCategoryValue] = useState();
 
-  console.log("filteredData", filteredData);
-
   const sortData = () => {
     if (categoryValue === "Most Upvotes") {
       return filteredData.sort((a, b) => {

@@ -55,8 +55,9 @@ function App() {
   });
 
   // add comment count and reply count to data state
-  let completeData = [];
+  let completeData; // can't initialise as an array initially as causes useMemo eslint error
   const combineRepliesAndComments = () => {
+    completeData = [];
     for (let j = 0; j < productRequests.length; j++) {
       completeData.push({
         ...productRequests[j],
@@ -74,8 +75,6 @@ function App() {
       setData(completeData);
     }
   }, [mount, completeData]);
-
-  console.log(data);
 
   return (
     <>

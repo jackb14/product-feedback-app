@@ -14,7 +14,6 @@ function FeedbackDetail() {
   const { data } = useContext(DataContext);
 
   const postDetails = data.filter((item) => item.id === Number(id));
-  console.log("postDetails", postDetails);
 
   const {
     title,
