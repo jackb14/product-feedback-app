@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import { DataContext } from "../../DataContext";
 import MainContent from "./components/MainContent";
@@ -7,8 +7,14 @@ import { FilteredDataContext } from "./FilteredDataContext";
 
 function Suggestions() {
   const { data } = useContext(DataContext);
-  const [filteredData, setFilteredData] = useState(data);
+  const [filteredData, setFilteredData] = useState([]);
   const value = { filteredData, setFilteredData };
+
+  useEffect(() => {
+    if (data.length > 0) {
+      setFilteredData(data);
+    }
+  }, [data]);
 
   return (
     <>

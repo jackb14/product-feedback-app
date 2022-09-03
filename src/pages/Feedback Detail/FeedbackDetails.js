@@ -14,7 +14,15 @@ function FeedbackDetail() {
   const { data } = useContext(DataContext);
 
   const postDetails = data.filter((item) => item.id === Number(id));
-  const { title, description, upvotes, category, comments } = postDetails[0];
+
+  const {
+    title,
+    description,
+    upvotes,
+    category,
+    comments,
+    totalCommentsAndReplies,
+  } = postDetails[0];
 
   // TODO - handle logic for id greater than available
 
@@ -36,7 +44,7 @@ function FeedbackDetail() {
           description={description}
           category={category}
           upvotes={upvotes}
-          comments={comments}
+          totalCommentsAndReplies={totalCommentsAndReplies}
           id={id}
         />
         <CommentThread data={data} comments={comments} />

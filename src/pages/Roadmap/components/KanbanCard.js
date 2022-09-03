@@ -11,7 +11,7 @@ function KanbanCard({
   description,
   category,
   upvotes,
-  comments,
+  totalCommentsAndReplies,
 }) {
   const checkStatus = (status) => {
     if (status === "in-progress") {
@@ -42,7 +42,7 @@ function KanbanCard({
             width="55px"
             height="40px"
           />
-          <CommentCount comments={comments} />
+          <CommentCount totalCommentsAndReplies={totalCommentsAndReplies} />
         </FlexBetweenWrapper>
       </CardWrapper>
     </>

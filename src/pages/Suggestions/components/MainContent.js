@@ -22,6 +22,14 @@ function MainContent() {
       return filteredData.sort((a, b) => {
         return a.upvotes - b.upvotes;
       });
+    } else if (categoryValue === "Most Comments") {
+      return filteredData.sort((a, b) => {
+        return b.totalCommentsAndReplies - a.totalCommentsAndReplies;
+      });
+    } else if (categoryValue === "Least Comments") {
+      return filteredData.sort((a, b) => {
+        return a.totalCommentsAndReplies - b.totalCommentsAndReplies;
+      });
     }
   };
   sortData();
@@ -35,7 +43,7 @@ function MainContent() {
         description={item.description}
         category={item.category}
         upvotes={item.upvotes}
-        comments={item.comments}
+        totalCommentsAndReplies={item.totalCommentsAndReplies}
         id={item.id}
       />
     ));

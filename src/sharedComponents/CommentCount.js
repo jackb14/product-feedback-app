@@ -2,20 +2,22 @@ import { Body1 } from "../GlobalStyles";
 import commentIcon from "../assets/shared/icon-comments.svg";
 import styled from "styled-components";
 
-function CommentCount({ comments }) {
-  const calculateCommentCount = () => {
-    if (comments) {
-      return comments.length;
-    } else {
-      return 0;
-    }
-  };
+function CommentCount({ totalCommentsAndReplies }) {
+  // const calculateCommentCount = () => {
+  //   if (comments) {
+  //     return comments.length;
+  //   } else {
+  //     return 0;
+  //   }
+  // };
 
   return (
     <>
       <StyledWrapper>
         <img src={commentIcon} alt="comment icon" />
-        <Body1 style={{ fontWeight: 600 }}>{calculateCommentCount()}</Body1>
+        <Body1 style={{ fontWeight: 600 }}>
+          {totalCommentsAndReplies}
+        </Body1>
       </StyledWrapper>
     </>
   );
