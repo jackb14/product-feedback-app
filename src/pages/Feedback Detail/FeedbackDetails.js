@@ -15,15 +15,6 @@ function FeedbackDetail() {
 
   const postDetails = data.filter((item) => item.id === Number(id));
 
-  const {
-    title,
-    description,
-    upvotes,
-    category,
-    comments,
-    totalCommentsAndReplies,
-  } = postDetails[0];
-
   return (
     <>
       <StyledWrapper>
