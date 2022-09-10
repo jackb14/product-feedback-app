@@ -24,8 +24,6 @@ function FeedbackDetail() {
     totalCommentsAndReplies,
   } = postDetails[0];
 
-  // TODO - handle logic for id greater than available
-
   return (
     <>
       <StyledWrapper>
@@ -39,15 +37,15 @@ function FeedbackDetail() {
         </HeaderWrapper>
         <SuggestionCard
           noClick={true}
-          key={id}
-          title={title}
-          description={description}
-          category={category}
-          upvotes={upvotes}
-          totalCommentsAndReplies={totalCommentsAndReplies}
-          id={id}
+          key={postDetails[0].id}
+          title={postDetails[0].title}
+          description={postDetails[0].description}
+          category={postDetails[0].category}
+          upvotes={postDetails[0].upvotes}
+          totalCommentsAndReplies={postDetails[0].totalCommentsAndReplies}
+          id={postDetails[0].id}
         />
-        <CommentThread data={data} comments={comments} />
+        <CommentThread data={data} comments={postDetails[0].comments} />
         <CommentCard />
       </StyledWrapper>
     </>
