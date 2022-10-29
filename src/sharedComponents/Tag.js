@@ -4,11 +4,12 @@ import { useContext } from "react";
 import { FilteredDataContext } from "../pages/Suggestions/FilteredDataContext";
 import { DataContext } from "../DataContext";
 
-function Tag({ category, hover }) {
+function Tag({ category, hover, active, setActive }) {
   const { data } = useContext(DataContext);
   const filteredData = useContext(FilteredDataContext); // can't destructure as context isn't always available
 
   const handleTagClick = (e) => {
+    setActive();
     if (hover) {
       const clickedTag = e.target.innerHTML;
       if (clickedTag !== "All") {
@@ -24,7 +25,7 @@ function Tag({ category, hover }) {
 
   return (
     <>
-      <StyledWrapper hover={hover}>
+      <StyledWrapper hover={hover} active={active}>
         <StyledBody onClick={(e) => handleTagClick(e)}>{category}</StyledBody>
       </StyledWrapper>
     </>
@@ -38,7 +39,12 @@ const StyledWrapper = styled.button`
   background-color: ${CUSTOM_STYLES.COLORS.blueyWhite};
   border-radius: ${CUSTOM_STYLES.OTHER.borderRadius};
   text-transform: capitalize;
-  color: ${CUSTOM_STYLES.COLORS.royalBlue} !important;
+  color: ${(props) =>
+    props.active ? "#ffffff" : CUSTOM_STYLES.COLORS.royalBlue};
+  background-color: ${(props) =>
+    props.active
+      ? CUSTOM_STYLES.COLORS.royalBlue
+      : CUSTOM_STYLES.COLORS.blueyWhite};
 
   &:hover {
     background-color: ${(props) =>

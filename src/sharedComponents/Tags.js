@@ -1,18 +1,29 @@
 import Tag from "./Tag";
 import styled from "styled-components";
+import { useState } from "react";
 
 function Tags({ categories, hover }) {
+  const [activeTag, setActiveTag] = useState();
   // generate tags here based on input
-
-  const tagMap = categories.map((category, i) => (
-    <Tag key={i} category={category} hover={hover} />
-  ));
 
   return (
     <>
       <StyledWrapper>
-        <Tag category="All" hover={hover} />
-        {tagMap}
+        <Tag
+          category="All"
+          hover={hover}
+          active={activeTag === "All"}
+          setActive={() => setActiveTag("All")}
+        />
+        {categories.map((category, i) => (
+          <Tag
+            key={i}
+            category={category}
+            hover={hover}
+            active={activeTag === category}
+            setActive={() => setActiveTag(category)}
+          />
+        ))}
       </StyledWrapper>
     </>
   );
